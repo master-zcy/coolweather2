@@ -9,6 +9,8 @@ import android.util.Log;
 import com.example.coolweather.db.City;
 import com.example.coolweather.db.County;
 import com.example.coolweather.db.Province;
+import com.example.coolweather.gson.Weather;
+import com.google.gson.Gson;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -125,51 +127,21 @@ public class Utility {
     }
 
     /*
-     * 解析服务器返回的JSON数据 并保存到本地
+     * 解析服务器返回的JSON数据解析成Weather实体类
      */
-    public static void handleWeatherResponse(Context context, String response){
+    public static Weather handleWeatherResponse(String response){
         try {
             JSONObject jsonObject=new JSONObject(response);
-            JSONArray HeWeatherArray=jsonObject.getJSONArray("HeWeather");
-            JSONObject  bean=HeWeatherArray.getJSONObject(0);
-            Log.e("zcy", "天气 json字符串："+bean.toString());
 
-            JSONObject bean_basic=bean.getJSONObject("basic");
-            JSONObject bean_basic_update=bean.getJSONObject("update");
-
-            JSONArray daily_array=bean.getJSONArray("daily_forecast");
-            JSONObject daliy_bean=daily_array.getJSONObject(0);
-            JSONObject daliy_bean_cond=daliy_bean.getJSONObject("cond");
-
-            JSONObject dally_bean_tmp=daliy_bean.getJSONObject("tmp");
-
-//			Gson gson=new Gson();
-//			HeWeatherBean heWeatherBean=gson.fromJson(bean.toString(), HeWeatherBean.class);
-            if(bean!=null){
-
-                String cityName=bean_basic.getString("city")	;
-                Log.e("zcy", "城市名： "+cityName);
-                String weatherCode=bean_basic.getString("id");
-                Log.e("zcy", "weatherCode： "+weatherCode);
-                String max=dally_bean_tmp.getString("max");
-                Log.e("zcy", "max： "+max);
-                String min=dally_bean_tmp.getString("min");
-                Log.e("zcy", "min： "+min);
-                String weatherDesp=daliy_bean_cond.getString("txt_d");
-                Log.e("zcy", "weatherDesp： "+weatherDesp);
-                String publishTime=bean_basic_update.getString("loc");
-                Log.e("zcy", "publishTime： "+publishTime);
-                saveWeatherInfo(context, cityName, weatherCode, max, min, weatherDesp, publishTime);
-
-            }else{
-                Log.e("zcy", "城市名：为空 ");
-            }
-
+            JSONArray jsonArray=jsonObject.getJSONArray("HeWeather");
+            String weatherContent=jsonArray.getJSONObject(0).toString();
+            return new Gson().fromJson(weatherContent,Weather.class);
 
         } catch (JSONException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
+        return null;
     }
 
     /**
