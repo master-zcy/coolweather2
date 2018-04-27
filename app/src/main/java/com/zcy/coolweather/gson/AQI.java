@@ -1,4 +1,4 @@
-package com.example.coolweather.gson;
+package com.zcy.coolweather.gson;
 
 /**
  * Created by Administrator on 2018/4/25.

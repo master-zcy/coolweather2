@@ -1,12 +1,10 @@
-package com.example.coolweather;
+package com.zcy.coolweather;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-
-import com.example.coolweather.gson.Weather;
 
 public class MainActivity extends AppCompatActivity {
 

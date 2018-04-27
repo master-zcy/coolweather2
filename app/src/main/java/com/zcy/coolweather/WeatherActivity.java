@@ -1,4 +1,4 @@
-package com.example.coolweather;
+package com.zcy.coolweather;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -21,11 +21,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
-import com.example.coolweather.gson.Forecast;
-import com.example.coolweather.gson.Weather;
-import com.example.coolweather.service.AutoUpdateService;
-import com.example.coolweather.util.HttpUtil;
-import com.example.coolweather.util.Utility;
+import com.zcy.coolweather.gson.Forecast;
+import com.zcy.coolweather.gson.Weather;
+import com.zcy.coolweather.service.AutoUpdateService;
+import com.zcy.coolweather.util.HttpUtil;
+import com.zcy.coolweather.util.Utility;
 
 import java.io.IOException;
 

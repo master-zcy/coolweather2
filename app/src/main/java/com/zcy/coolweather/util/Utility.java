@@ -1,4 +1,4 @@
-package com.example.coolweather.util;
+package com.zcy.coolweather.util;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -6,10 +6,10 @@ import android.preference.PreferenceManager;
 import android.text.TextUtils;
 import android.util.Log;
 
-import com.example.coolweather.db.City;
-import com.example.coolweather.db.County;
-import com.example.coolweather.db.Province;
-import com.example.coolweather.gson.Weather;
+import com.zcy.coolweather.db.City;
+import com.zcy.coolweather.db.County;
+import com.zcy.coolweather.db.Province;
+import com.zcy.coolweather.gson.Weather;
 import com.google.gson.Gson;
 
 import org.json.JSONArray;

@@ -1,4 +1,4 @@
-package com.example.coolweather.service;
+package com.zcy.coolweather.service;
 
 import android.app.AlarmManager;
 import android.app.PendingIntent;
@@ -10,14 +10,10 @@ import android.os.SystemClock;
 import android.preference.PreferenceManager;
 import android.support.annotation.Nullable;
 import android.util.Log;
-import android.view.View;
-import android.widget.Toast;
 
-import com.bumptech.glide.Glide;
-import com.example.coolweather.WeatherActivity;
-import com.example.coolweather.gson.Weather;
-import com.example.coolweather.util.HttpUtil;
-import com.example.coolweather.util.Utility;
+import com.zcy.coolweather.gson.Weather;
+import com.zcy.coolweather.util.HttpUtil;
+import com.zcy.coolweather.util.Utility;
 
 import java.io.IOException;
 
